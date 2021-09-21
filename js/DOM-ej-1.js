@@ -15,7 +15,7 @@ let alertTrigger = document.getElementById("liveAlertBtn");
 function alert(message, type) {
   let wrapper = document.createElement("div");
   wrapper.innerHTML =
-    '<div class="position-absolute bottom-50 end-50  alert alert-' +
+    '<div class="position-absolute top-50 start-50 translate-middle  alert alert-' +
     type +
     ' alert-dismissible  fade show" role="alert" id="my-alert">' +
     message +
