@@ -1,0 +1,31 @@
+/* Background styles */
+body {
+  padding: 4.5rem;
+  margin: 0;
+  background: #edc0bf;
+  background: linear-gradient(90deg, #edc0bf 0,#c4caef 58%);
+  font-family: 'Inter', sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  background-image: url(/img/bg-default-01.jpg);
+  height: 100vh;
+}
+
+/* Glassmorphism card effect */
+.card {
+  
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 128px 42px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  width: 70vw;
+  height: 75vh;
+}
+
+#my-alert{
+  z-index: 100;
+}
