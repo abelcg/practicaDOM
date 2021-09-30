@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Práctica DOM JS" />
+    <meta name="keywords" content="javascript, DOM" />
+    <meta name="author" content="Abel Córdoba González" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style_ej_2.css" />
+
+    <title>Ejercicio 2 - DOM</title>
+  </head>
+  <body id="body">
+    <main class="container my-5">
+      <div id="AlertPlaceholder"></div>
+      <form class="my-5 p-3 text-center neo" id="formu">
+        <span contenteditable="true">¿Cuál es tu generación?</span>
+        <div class="my-5">
+          <input
+            type="text"
+            class="form-control text-secondary border-0 input fs-4 text-center"
+            id="nombre"
+            aria-describedby="nombre"
+            placeholder="Nombre"
+            minlength="3"
+            maxlength="20"
+            required
+            />
+            <!--  onblur = "validarCampoRequerido(this)" -->
+          <div class="invalid-feedback">Este campo es obligatorio y debe ser mayor a 3 caracteres</div>
+        </div>
+        <div class="mb-4">
+          <input
+            type="text"
+            class="form-control text-secondary border-0 input fs-4 text-center"
+            id="Edad"
+            aria-describedby="Edad"
+            placeholder="Edad"
+            />
+            <!-- onblur = "validarEdad(this)" -->
+          <div class="invalid-feedback">Este campo es obligatorio</div>
+        </div>
+        <div class="mb-4">
+          <input
+            type="text"
+            class="form-control text-secondary border-0 input fs-4 text-center"
+            id="DNI"
+            aria-describedby="DNI"
+            placeholder="DNI"
+            />
+            <!--  onblur = "validarDNI(this)" -->
+          <div class="invalid-feedback">Este campo es obligatorio</div>
+        </div>
+        <div class="mb-4">
+          <select
+            class="form-select text-dark border-0 input fs-4 text-center"
+            aria-label="Default select"
+            id="sexo"
+          >
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <input
+            type="text"
+            class="form-control text-secondary border-0 input fs-4 text-center"
+            id="Peso"
+            aria-describedby="Peso"
+            placeholder="Peso"
+            />
+            <!--  onblur = "validarPeso(this)" -->
+          <div class="invalid-feedback">Este campo es obligatorio</div>
+        </div>
+        <div class="mb-4">
+          <input
+            type="text"
+            class="form-control text-secondary border-0 input fs-4 text-center"
+            id="Altura"
+            aria-describedby="Altura"
+            placeholder="Altura"
+            />
+            <!-- onblur = "validarAltura(this)" -->
+          <div class="invalid-feedback">Este campo es obligatorio</div>
+        </div>
+        <div class="mb-4">
+          <input
+            type="text"
+            class="form-control text-secondary border-0 input fs-4 text-center"
+            id="AnioNacimiento"
+            aria-describedby="AnioNacimiento"
+            placeholder="Año de nacimiento"
+            />
+            <!--  onblur = "validarAnioNacimiento(this)" -->
+          <div class="invalid-feedback">Este campo es obligatorio</div>
+        </div>
+        <div class="btn-group d-flex flex-row">
+          <button
+          type="submit"
+          class="
+            btn btn-outline-dark
+            text-dark
+            fs-4
+            border-0
+            rounded-pill
+            input
+            px-1
+            m-4
+            buttn
+          "
+        id="borrarForm"
+        >
+       Borrar Datos
+        </button>
+          <button
+            type="submit"
+            class="
+              btn btn-outline-dark
+              text-dark
+              fs-4
+              border-0
+              rounded-pill
+              input
+              px-1
+              m-4
+              buttn
+            "
+          id="enviar"
+          >
+          <!--  onsubmit="validarGeneral(this)" -->
+            Enviar
+          </button>
+        </div>
+        <button
+          type="button"
+          class="
+            btn btn-outline-dark
+            text-dark
+            fs-4
+            border-0
+            rounded-pill
+            input
+            px-4
+            buttn
+          "
+          data-bs-toggle="modal"
+          href="#ModalToggle"
+
+          id="mostrarGeneracion"
+        >
+          Mostrar Generación
+        </button>
+        <div class="neo alert alert-light text-danger mt-4 fs-4 fw-bold d-none" role="alert" id="msjAlerta">
+          Debe completare todos los datos
+        </div>
+      </form>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="ModalToggle"
+        aria-hidden="true"
+        aria-labelledby="ModalToggleLabel"
+        tabindex="-1"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content input p-4" id="modal-content">
+            <div class="d-flex flex-row  justify-content-center my-3 px-4">
+              <button
+              type="button"
+              class="btn-close ms-auto"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              ></button>
+            </div>
+            
+            <div class="modal-footer" id="modal-footer">
+              <button
+                class=" btn btn-outline-dark
+                text-dark
+                fs-4
+                border-0
+                rounded-pill
+                input
+                px-4
+                buttn"
+                data-bs-target="#ModalToggle2"
+                data-bs-toggle="modal"
+                data-bs-dismiss="modal"
+              >
+                Mostrar tus datos
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="ModalToggle2"
+        aria-hidden="true"
+        aria-labelledby="ModalToggleLabel2"
+        tabindex="-1"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content input" id="modal-content2">
+            <div class="d-flex flex-row  justify-content-end my-3 px-4">
+              <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              ></button>
+            </div>
+          
+            <div class="modal-footer" id="modal-footer2">
+              <button
+                class="btn btn-outline-dark
+                text-dark
+                fs-4
+                border-0
+                rounded-pill
+                input
+                px-4
+                buttn"
+                data-bs-dismiss="modal"
+                id="eresAdulto"
+              >
+               ¿Eres Adulto?
+              <button
+                class="btn btn-outline-dark
+                text-dark
+                fs-4
+                border-0
+                rounded-pill
+                input
+                px-4
+                buttn"
+                data-bs-target="#ModalToggle"
+                data-bs-toggle="modal"
+                data-bs-dismiss="modal"
+              >
+                Mostrar tu Generación
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+  
+
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/DOM-ej-2.js"></script>
+  </body>
+</html>

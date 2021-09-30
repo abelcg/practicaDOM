@@ -16,7 +16,7 @@ function verMas() {
   // Crear y agregar un elemento al DOM
   // paso 1 - buscar el elemento padre
   let articulos = document.getElementsByTagName("article");
-  console.log(articulos[1]);
+  console.log(articulos[0]);
 
   if (btnVerMas.innerHTML == 'ver mas...') {
       
